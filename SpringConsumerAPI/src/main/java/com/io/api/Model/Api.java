@@ -1,4 +1,4 @@
-package com.io.api.Model;
+package com.io.api.model;
 
 public class Api {
 	
