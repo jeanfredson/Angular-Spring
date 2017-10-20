@@ -1,12 +1,23 @@
 package consumindoApi.topic;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
 @Service
-public class TopicService {
+public class  TopicService{
+	
+	private List<Topicos> listar =  new ArrayList<Topicos>(Arrays.asList(
+			new Topicos("001","Rafael - 1", "Teste 1 de consumo de API com SpringBoot"),
+			new Topicos("002","Rafael - 2", "Teste 2 de consumo de API com SpringBoot"),
+			new Topicos("003","Rafael - 3", "Teste 3 de consumo de API com SpringBoot"),
+			new Topicos("004","Rafael - 4", "Teste 4 de consumo de API com SpringBoot"),
+			new Topicos("005","Rafael - 5", "Teste 5 de consumo de API com SpringBoot")			
+			
+	));
+	/*
 		
 	private List<Topicos> listar() {
 
@@ -14,9 +25,9 @@ public class TopicService {
 		Topicos t2 = new Topicos();
 		Topicos t3 = new Topicos();
 
-		t1.setNome("Rafael - 1");
-		t1.setId("001");
-		t1.setDescricao("Teste de consumo de API com SpringBoot");
+		t1.setNome();
+		t1.setId("");
+		t1.setDescricao();
 
 		t2.setNome("Rafael - 2");
 		t2.setId("002");
@@ -33,14 +44,21 @@ public class TopicService {
 
 		return itens;
 	}
+	*/
 	public List<Topicos> allTopicos(){
-		return listar();
+		return listar;
 	}
 	
 	public Topicos getAllTopicos(String id){
 		
-		return listar().stream().filter(t -> t.getId().equals(id)).findFirst().get();
+		return listar.stream().filter(t -> t.getId().equals(id)).findFirst().get();
 	}
+	public void addTopicos(Topicos t) {
+		listar.add(t);
+		
+	}
+	
+	
 
 
 	
