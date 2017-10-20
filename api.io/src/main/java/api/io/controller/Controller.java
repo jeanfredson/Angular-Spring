@@ -3,6 +3,8 @@ package api.io.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -10,25 +12,23 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class Controller {
 	
-	@RequestMapping("/buscar")
-	public String getAll(){
-		
-		return "Buscando API";
-	}
+	@Autowired
+	private DadosServices ds;
 	
 	@RequestMapping("/listar")
 	public List<Dados> itens(){
-		
-		Dados d = new Dados();
-		
-		d.setId(1);
-		d.setNome("Rafael Carvalho");
-		d.setIdade("31");
-		
-		ArrayList<Dados> listando = new ArrayList<Dados>();
-		listando.add(d);
-		
-		return listando;
+		return ds.getListar();
 	}
+	
+	@RequestMapping("/buscar/{id}")
+	public List<Dados> dadosID(@PathVariable int id){
+		
+		if(ds.getDados(id).isEmpty()){
+			String erro = "Erro na buscar";
+		}
+		return ds.getDados(id);
+				
+	}
+	
 
 }
