@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Implementation-Title: Fire Line Consume API
+Implementation-Version: 1
+Built-By: Developer
+Implementation-Vendor-Id: com.fireline.springboot
+Build-Jdk: 1.8.0_111
+Implementation-URL: http://projects.spring.io/spring-boot/consumindoAp
+ i/
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+
