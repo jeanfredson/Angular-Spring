@@ -17,34 +17,7 @@ public class  TopicService{
 			new Topicos("005","Rafael - 5", "Teste 5 de consumo de API com SpringBoot")			
 			
 	));
-	/*
-		
-	private List<Topicos> listar() {
-
-		Topicos t1 = new Topicos();
-		Topicos t2 = new Topicos();
-		Topicos t3 = new Topicos();
-
-		t1.setNome();
-		t1.setId("");
-		t1.setDescricao();
-
-		t2.setNome("Rafael - 2");
-		t2.setId("002");
-		t2.setDescricao("Teste de consumo de API com SpringBoot");
-
-		t3.setNome("Rafael - 3");
-		t3.setId("003");
-		t3.setDescricao("Teste de consumo de API com SpringBoot");
-
-		ArrayList<Topicos> itens = new ArrayList<Topicos>();
-		itens.add(t1);
-		itens.add(t2);
-		itens.add(t3);
-
-		return itens;
-	}
-	*/
+	
 	public List<Topicos> allTopicos(){
 		return listar;
 	}
@@ -57,10 +30,21 @@ public class  TopicService{
 		listar.add(t);
 		
 	}
-	
-	
 
+	public void updateTopicos(String id, Topicos t) {
+		for(int i=0; i < listar.size(); i++){
+			Topicos tp = listar.get(i);
+			if(t.getId().equals(id)){
+				listar.set(i, t);
+				return;
+			}
+		}
+		
+	}
 
+	public void deleteTopicos(String id) {
+		listar.removeIf(t -> t.getId().equals(id));
+	}
 	
 	
 }

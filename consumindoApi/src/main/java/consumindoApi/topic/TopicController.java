@@ -17,7 +17,7 @@ public class TopicController {
 	private TopicService ts;
 	
 	
-	@RequestMapping("/topicos/all")
+	@RequestMapping("/topicos")
 	public List<Topicos> getAll(){
 		
 		return ts.allTopicos();
@@ -32,6 +32,16 @@ public class TopicController {
 	@RequestMapping(method=RequestMethod.POST, value="/topicos")
 	public void addTopicos(@RequestBody Topicos t){
 		ts.addTopicos(t);
+	}
+	
+	@RequestMapping(method=RequestMethod.PUT, value="/topicos{id}")
+	public void addTopicos(@RequestBody Topicos t, @PathVariable String id){
+		ts.updateTopicos(id, t);
+	}
+	
+	@RequestMapping("/topicos/{id}")
+	public void deleteTopicos(@PathVariable String id){
+		ts.deleteTopicos(id);
 	}
 
 }
