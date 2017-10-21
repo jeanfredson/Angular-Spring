@@ -4,18 +4,13 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.io.api.model.Api;
 
 @Service
 public class ApiService {
 	
-	@Autowired
-	Api api;
-	
-	
+		
 	private List<Api> listando = new ArrayList<Api>(Arrays.asList(
 			new Api(1, "Rafael 1", "123456789 - 1", "Sistemas1"),
 			new Api(2, "Rafael 2", "123456789 - 2", "Sistemas2"),
@@ -27,9 +22,31 @@ public class ApiService {
 		return listando;
 	}
 	
-	public void getID(Api id){
-		api.setId(id);
+	public List<Api> listaID(int i){
+		
+		ArrayList<Api> itens = new ArrayList<Api>();
+		Api api = new Api();
+		api.setId(i);
+		for(Api a : listando){
+			
+			a.getId();
+			a.getNome();
+			a.getCurso();			
+			itens.add(a);
+		}
+		return itens;
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
 
 	
