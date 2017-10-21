@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from '../../service/user.service';
 import { User } from '../../user';
+import { AppRoutingModule } from '../../app-routing.module';
+
 
 @Component({
   selector: 'app-list-user',
@@ -11,6 +13,7 @@ import { User } from '../../user';
 export class ListUserComponent implements OnInit {
 
   private users:User[];
+  private r:AppRoutingModule;
 
   constructor(private _userService:UserService, private _router:Router) { }
 
@@ -32,7 +35,7 @@ export class ListUserComponent implements OnInit {
   updateUser(user){
     this._userService.setter(user);
     this._router.navigate(['/user']);
-
+    
   }
   newUser(){
     let user = new User(); 

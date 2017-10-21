@@ -12,12 +12,12 @@
             <td>{{user.fnome}}</td>
             <td>{{user.lnome}}</td>
             <td>
-              <button class="btn btn-danger" (ngSubmit)="deleteUser(user)" >DELETE</button>
-              <button class="btn btn-primary" (ngSubmit)="updateUser(user)">Edit</button>
+              <button class="btn btn-danger" (click)="deleteUser(user)" >DELETE</button>
+              <button class="btn btn-primary" (click)="updateUser(user)">Edit</button>
             </td>
           </tr>
         </tbody>
       </table>
-      <button class="btn btn-primary" (ngSubmit)="newUser()">Novo Usuário</button>
+      <button class="btn btn-primary" (click)="newUser()">Novo Usuário</button>
 </div>
 
