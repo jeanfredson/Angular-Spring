@@ -1,14 +1,23 @@
-<table>
-  <thead>
-    <th>ID</th>
-    <th>Nome</th>
-    <th>Sobre Nome</th>
-  </thead>
-  <tbody>
-    <tr *ngFor="let user of users">
-      <td>{{user.id}}</td>
-      <td>{{user.lnome}}</td>
-      <td>{{user.fnome}}</td>
-    </tr>
-  </tbody>
-</table>
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+          <th>ID</th>
+          <th>Nome</th>
+          <th>Sobre Nome</th>
+          <th>Opções</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users">
+            <td>{{user.id}}</td>
+            <td>{{user.lnome}}</td>
+            <td>{{user.fnome}}</td>
+            <td>
+              <button class="btn btn-danger" >DELETE</button>
+              <button class="btn btn-primary">Edit</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <button class="btn btn-primary">Novo Usuário</button>
+</div>
+
