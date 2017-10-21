@@ -14,6 +14,7 @@ export class UserService {
   private baseUrl:string='http://localhost:8080/api';
   private headers = new Headers({'content-Type':'application/json'});
   private option = new RequestOptions({headers:this.headers});
+  private user=new User();
 
   constructor(private _http:Http){}
 
@@ -39,6 +40,13 @@ export class UserService {
   }
   erroHandler(erro:Response){
     return Observable.throw(erro || "SERVER ERRO");
+  }
+
+  setter(user:User){
+    this.user=user;
+  }
+  getter(){
+    return this.user;
   }
 
 }

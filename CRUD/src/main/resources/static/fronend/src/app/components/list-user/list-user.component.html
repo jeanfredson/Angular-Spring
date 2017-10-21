@@ -9,15 +9,15 @@
         <tbody>
           <tr *ngFor="let user of users">
             <td>{{user.id}}</td>
-            <td>{{user.lnome}}</td>
             <td>{{user.fnome}}</td>
+            <td>{{user.lnome}}</td>
             <td>
-              <button class="btn btn-danger" (click)="deleteUser(user)" >DELETE</button>
-              <button class="btn btn-primary">Edit</button>
+              <button class="btn btn-danger" (ngSubmit)="deleteUser(user)" >DELETE</button>
+              <button class="btn btn-primary" (ngSubmit)="updateUser(user)">Edit</button>
             </td>
           </tr>
         </tbody>
       </table>
-      <button class="btn btn-primary">Novo Usuário</button>
+      <button class="btn btn-primary" (ngSubmit)="newUser()">Novo Usuário</button>
 </div>
 
