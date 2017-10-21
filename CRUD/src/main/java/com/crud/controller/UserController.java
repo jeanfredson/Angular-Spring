@@ -35,6 +35,11 @@ public class UserController {
 		userRepositorio.delete(id);
 		return true;
 	}
+	
+	/*
+	 * @PostMapping pode ser substituido por RequestMapping(RequestMethod.POST, value="/user")
+	 * 
+	 * */
 	@PostMapping("/user")
 	public User createUser(User user){
 		return userRepositorio.save(user);
