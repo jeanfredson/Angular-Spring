@@ -1,7 +1,7 @@
 export class User {
 
-    id:number;
-    fnome:String;
-    lnome:String;
+    id:Number;
+    fnome:string;
+    lnome:string;
 
 }

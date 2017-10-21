@@ -1,3 +1,14 @@
-<p>
-  list-user works!
-</p>
+<table>
+  <thead>
+    <th>ID</th>
+    <th>Nome</th>
+    <th>Sobre Nome</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users">
+      <td>{{user.id}}</td>
+      <td>{{user.lnome}}</td>
+      <td>{{user.fnome}}</td>
+    </tr>
+  </tbody>
+</table>
