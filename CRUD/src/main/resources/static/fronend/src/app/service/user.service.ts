@@ -17,7 +17,7 @@ export class UserService {
 
   constructor(private _http:Http){}
 
-  getUser(){
+  getUsers(){
     return this._http.get(this.baseUrl+'/user', this.option).map((response:Response)=> response.json())
       .catch(this.erroHandler);
   }
@@ -37,14 +37,6 @@ export class UserService {
     return this._http.put(this.baseUrl+'/user', JSON.stringify(user), this.option).map((response:Response)=> response.json())
       .catch(this.erroHandler);
   }
-
-
-
-
-
-
-
-
   erroHandler(erro:Response){
     return Observable.throw(erro || "SERVER ERRO");
   }
