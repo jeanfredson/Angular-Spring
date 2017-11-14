@@ -43,6 +43,9 @@ public class TopicosService {
 		}
 		
 	}
+	public void deleteTopicosID(String id) {
+		top.removeIf(t -> t.getId().equals(id));
+	}
 
 
 

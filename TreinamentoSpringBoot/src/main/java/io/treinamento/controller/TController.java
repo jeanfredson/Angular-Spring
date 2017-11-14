@@ -35,6 +35,10 @@ public class TController {
 	public void updateTopicos(@RequestBody Topicos t, @PathVariable String id){
 		tpservice.updateTopicos(id, t);
 	}
+	@RequestMapping(method=RequestMethod.DELETE, value="/buscando/{id}")
+	public void deleteTopicosID(@PathVariable String id){
+		tpservice.deleteTopicosID(id);
+	}
 	
 
 }
